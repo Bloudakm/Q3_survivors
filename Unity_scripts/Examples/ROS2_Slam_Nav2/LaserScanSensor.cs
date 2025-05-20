@@ -1,3 +1,11 @@
+/*
+This should be a digital version of the laser scan,
+because it does some stuff and publishes the data to a ros topic.
+
+In other words it just visualizes the scanning digitally and I think
+it also highlights the objects it has "detected".
+*/
+
 using System;
 using System.Collections.Generic;
 using RosMessageTypes.Sensor;
@@ -37,6 +45,7 @@ public class LaserScanSensor : MonoBehaviour
     protected virtual void Start()
     {
         m_Ros = ROSConnection.GetOrCreateInstance();
+        // Why is this a publisher and not subscriber?
         m_Ros.RegisterPublisher<LaserScanMsg>(topic);
 
         m_CurrentScanAngleStart = ScanAngleStartDegrees;

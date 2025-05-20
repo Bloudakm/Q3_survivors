@@ -1,3 +1,8 @@
+/*
+If I understand this correctly this mirrors the movement the bot 
+does irl to the unity engine.
+*/
+
 using UnityEngine;
 using Unity.Robotics.ROSTCPConnector;
 using RosMessageTypes.Geometry;
@@ -38,6 +43,8 @@ namespace RosSharp.Control
             SetParameters(wA1);
             SetParameters(wA2);
             ros = ROSConnection.GetOrCreateInstance();
+
+            // Very important we subscribe to listen to movement from the bot
             ros.Subscribe<TwistMsg>("cmd_vel", ReceiveROSCmd);
         }
 
@@ -129,6 +136,7 @@ namespace RosSharp.Control
 
         private void RobotInput(float speed, float rotSpeed) // m/s and rad/s
         {
+            // Clipping the speed so that it doesnt exceed max
             if (speed > maxLinearSpeed)
             {
                 speed = maxLinearSpeed;
@@ -137,10 +145,12 @@ namespace RosSharp.Control
             {
                 rotSpeed = maxRotationalSpeed;
             }
+
+            // Calculating something obscure
             float wheel1Rotation = (speed / wheelRadius);
-            float wheel2Rotation = wheel1Rotation;
+            float wheel2Rotation = wheel1Rotation; // making it symmetric for the second wheel
             float wheelSpeedDiff = ((rotSpeed * trackWidth) / wheelRadius);
-            if (rotSpeed != 0)
+            if (rotSpeed != 0) // if the robot is not going just straight
             {
                 wheel1Rotation = (wheel1Rotation + (wheelSpeedDiff / 1)) * Mathf.Rad2Deg;
                 wheel2Rotation = (wheel2Rotation - (wheelSpeedDiff / 1)) * Mathf.Rad2Deg;

@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*
+Clock synchronization?
+*/
+
+using System;
 using UnityEngine;
 
 namespace Unity.Robotics.Core
