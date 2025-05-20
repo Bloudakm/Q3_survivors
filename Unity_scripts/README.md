@@ -9,6 +9,9 @@ https://github.com/Unity-Technologies/Unity-Robotics-Hub/tree/main/tutorials/ros
 #### ROS2:
 https://github.com/Unity-Technologies/ros2cs
 
+---
+### RobotecAI
+https://github.com/RobotecAI/ros2-for-unity
 
 ---
 

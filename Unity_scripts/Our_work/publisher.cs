@@ -1,14 +1,14 @@
 /*
-My attempt at the publisher.
+Publisher for a very simple text sending.
 */
 
 using UnityEngine;
 using Unity.Robotics.ROSTCPConnector;
-using RosMessageTypes.std_msgs;
+using RosMessageTypes.Std;
 
 public class Q3SurvivorsPublisher : MonoBehaviour // Parent is MonoBehaviour (what is that?)
 {
-    const string topicName = "/Q3Survivors";
+    const string topicName = "Q3Survivors";
     ROSConnection ros;
     public float publishMessagePeriod = 0.5f;
     private float timeElapsed;
@@ -20,7 +20,7 @@ public class Q3SurvivorsPublisher : MonoBehaviour // Parent is MonoBehaviour (wh
         // Establish connection
         ros = ROSConnection.GetOrCreateInstance();
         // Start publisher
-        ros.RegisterPublisher<std_msgs>(topicName);
+        ros.RegisterPublisher<std_msgs>(topicName); // std_msgs.mes.String??
     }
 
     private void PublishMes()
