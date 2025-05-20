@@ -35,7 +35,7 @@ public class Q3SurvivorsPublisher : MonoBehaviour // Parent is MonoBehaviour (wh
         ros.Publish(topicName, mes);
     }
 
-    private void Update()
+    void Update()
     {
         // Add the time elapsed
         timeElapsed += Time.deltaTime;

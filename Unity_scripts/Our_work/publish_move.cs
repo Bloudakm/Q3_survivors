@@ -72,7 +72,7 @@ public class MovePublisher : MonoBehaviour
         ros.Publish(topicName, cmdVel);
     }
 
-    private void Update()
+    void Update()
     {
         // Add the time elapsed
         timeElapsed += Time.deltaTime;
