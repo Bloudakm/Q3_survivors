@@ -2,6 +2,17 @@
 Also if you have any other Unity stuff go ahead and dump it here (even in this readme).
 
 ---
+### Folder structure
+```bash
+├───Algorithms
+├───Lab preparation docs
+└───Unity_scripts
+    ├───Examples
+    │   ├───Custom_RO2_Unity
+    │   └───ROS2_Slam_Nav2
+    └───Our_work
+```
+---
 
 ### Official Unity github
 #### ROS Unity (more in Examples):
