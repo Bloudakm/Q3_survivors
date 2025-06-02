@@ -29,7 +29,7 @@ public class ScanSub
         {
             int deg = i * 90;
             float distance = laserScanMsg.ranges.ElementAt(deg);
-            string mes = $"Distance at deg({deg}): {}";
+            string mes = $"Distance at deg({deg}): {distance}";
             Console.WriteLine(mes);   
         }
     }
