@@ -10,9 +10,12 @@ public class PathExecutor : MonoBehaviour
     public Vector3[] waypoints; // Assign in Unity Inspector
     public float arrivalThreshold = 0.1f; // How close to waypoint before moving to next
 
+    private const string moveTopic = "/cmd_vel";
+
     void Start()
     {
         ros = ROSConnection.GetOrCreateInstance();
+        ros.RegisterPublisher<TwistMsg>(moveTopic);
         StartCoroutine(FollowPath());
     }
 
@@ -29,12 +32,12 @@ public class PathExecutor : MonoBehaviour
                 TwistMsg cmdVel = new TwistMsg();
                 cmdVel.linear.x = linearX;
                 cmdVel.angular.z = angularZ;
-                ros.Publish("/cmd_vel", cmdVel);
+                ros.Publish(moveTopic, cmdVel);
 
                 yield return null;
             }
         }
         // Stop at the end
-        ros.Publish("/cmd_vel", new TwistMsg());
+        ros.Publish(moveTopic, new TwistMsg());
     }
 }
