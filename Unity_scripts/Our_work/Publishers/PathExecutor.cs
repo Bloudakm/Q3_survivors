@@ -16,7 +16,7 @@ public class PathExecutor : MonoBehaviour
     {
         ros = ROSConnection.GetOrCreateInstance();
         ros.RegisterPublisher<TwistMsg>(moveTopic);
-        StartCoroutine(FollowPath());
+        //StartCoroutine(FollowPath());
     }
 
     IEnumerator FollowPath()
@@ -39,5 +39,11 @@ public class PathExecutor : MonoBehaviour
         }
         // Stop at the end
         ros.Publish(moveTopic, new TwistMsg());
+    }
+
+    public void StartFollowingPath()
+    {
+        StopAllCoroutines();
+        StartCoroutine(FollowPath());    
     }
 }
