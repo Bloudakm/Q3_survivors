@@ -2,9 +2,11 @@
 The digital environment will receive a simulated obstacle. We expect the software to recompute the route to the destination, with the latency between the digital environment registering the obstacle and the new route being recomputed being within 500 ms.
 
 ## Prerequizites:
-- Laser Scan Obstacle Visualizer *script*
-- LaserCube *prefab*
+- Default Visualizer *prefab* (nav_msgs/OccupancyGrid... + path)
 - DigitalObject *prefab*
+- SimulatedObstacleTester *script*
+- PathPlanningManager *script*
+- AutoNavigationManager *script*
 
 ### Turtlebot
 ```bash
@@ -17,4 +19,11 @@ ros2 launch turtlebot3_bringup robot.launch.py
 ```bash
 source install/setup.bash
 ros2 run ros_tcp_endpoint default_server_endpoint --ros-args -p ROS_IP:=192.168.8.225
+```
+```bash
+ros2 launch unity_slam_example unity_slam_example.py params_file:='/home/ubuntuhost/Downloads/2IRR10UnityProject/My project/Assets/turtlebot3-foxy-devel/turtlebot3_navigation2/param/burger.yaml'
+```
+or
+```bash
+ros2 launch turtlebot3_navigation2 navigation2.launch.py map:=$HOME/map.yaml
 ```

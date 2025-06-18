@@ -3,6 +3,7 @@ The TurtleBot will be tasked to detect an obstacle and send this data to the dig
 
 ## Prerequizites:
 - Laser Scan Obstacle Visualizer *script*
+- Default Visualizer *prefab* (sensor_msg/Laser...)
 - LaserCube *prefab*
 
 ### Turtlebot
