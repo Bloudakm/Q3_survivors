@@ -6,6 +6,8 @@ The TurtleBot will be sent a new route during operation. We expect it to follow 
 - PathPlanningManager *script*
 - AutoNavigationManager *script*
 
+*(Uncomment line **59** in PathManager)*
+
 ### Turtlebot
 ```bash
 ssh ubuntu@192.168.8.40

@@ -6,6 +6,8 @@ The TurtleBot will be tasked to detect an obstacle and send this data to the dig
 - Default Visualizer *prefab* (sensor_msg/Laser...)
 - LaserCube *prefab*
 
+*(Also in the Laser visualizer uncomment a line for timing)*
+
 ### Turtlebot
 ```bash
 ssh ubuntu@192.168.8.40

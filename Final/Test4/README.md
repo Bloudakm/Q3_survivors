@@ -4,7 +4,9 @@ The digital environment will receive a simulated passenger. We expect the softwa
 ## Prerequizites:
 - Default Visualizer *prefab* (nav_msgs/OccupancyGrid... + path)
 - PathPlanningManager *script*
-- AutoNavigationManager *script*
+- AutoNavigationManager *script* 
+
+*(For rerouting without actually acting on the new route comment line **59** in PathManager) Also might be possible to run just bring up?*
 
 ### Turtlebot
 ```bash
