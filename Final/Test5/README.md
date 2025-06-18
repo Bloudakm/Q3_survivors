@@ -1,0 +1,15 @@
+# Test 5: 
+The TurtleBot will be tasked to navigate autonomously through the testing map, without any obstacles. We expect it not to get stuck anywhere.
+
+### Turtlebot
+```bash
+ssh ubuntu@192.168.8.40
+export TURTLEBOT3_MODEL=burger
+ros2 launch turtlebot3_bringup robot.launch.py
+```
+
+### Laptop (ros2_ws)
+```bash
+source install/setup.bash
+ros2 run ros_tcp_endpoint default_server_endpoint --ros-args -p ROS_IP:=192.168.8.225
+```
