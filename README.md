@@ -1,5 +1,6 @@
 # Q3_survivors
 ### CBL Team 25
+The ```technical_reflection.md``` is inside the Reflection folder and the Unity project is in its own folder as well. Lastly, the Final folder is our internal guide for the last lab session. Otherwise, the rest of the files and folders are our work throughout the course.
 
 *(There is more info and READMES in the individual folders)*
 
