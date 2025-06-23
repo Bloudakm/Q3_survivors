@@ -19,5 +19,12 @@ public class RosLaserScanSubscriber : MonoBehaviour
     {
         // Process laserScan.ranges, laserScan.angle_min, etc.
         Debug.Log("Received LaserScan with " + laserScan.ranges.Length + " points.");
+
+        for (int i = 0; i < laserScan.ranges.Length; i++)
+        {
+            float distance = laserScanMsg.ranges.ElementAt(i);
+            string mes = $"Distance at deg({i}): {distance}";
+            Debug.Log(mes);   
+        }
     }
 }

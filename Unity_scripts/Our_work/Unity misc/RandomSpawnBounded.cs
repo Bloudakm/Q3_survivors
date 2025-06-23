@@ -14,7 +14,7 @@ public class RandomSpawn : MonoBehaviour
     void Start()
     {
         maxX = grid.size.x;
-        maxZ = grid.size.z
+        maxZ = grid.size.z;
     }
 
     // Update is called once per frame

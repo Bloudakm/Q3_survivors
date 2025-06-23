@@ -10,11 +10,13 @@ using UnityEngine;
 using Unity.Robotics.ROSTCPConnector;
 using UnityEngine.Serialization;
 using System.Linq;
+using RosMessageTypes.Sensor; // For LaserScanMsg
 
 public class ScanSub
 {
-    const string scanTopic = "scan";
+    const string scanTopic = "/scan";
     ROSConnection ros;
+    
     public void Start()
     {
         // Establish connection
@@ -25,12 +27,14 @@ public class ScanSub
 
     public void LogScan(LaserScanMsg laserScanMsg)
     {
+        Debug.Log("Received LaserScan with " + laserScan.ranges.Length + " points.");
+
         for (int i = 0; i < 4; i++)
         {
             int deg = i * 90;
             float distance = laserScanMsg.ranges.ElementAt(deg);
             string mes = $"Distance at deg({deg}): {distance}";
-            Console.WriteLine(mes);   
+            Debug.Log(mes);   
         }
     }
 }
